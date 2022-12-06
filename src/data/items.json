@@ -1,0 +1,65 @@
+[
+    {
+      "id": 1,
+      "name": "Book",
+      "price": 10.99,
+      "minusVAT":9.23,
+      "vat":1.76,
+      "stockUnit":100,
+      "imgUrl": "/imgs/book.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Computer",
+      "price": 1199,
+      "minusVAT":1007.16,
+      "vat":191.84,
+      "stockUnit":100,
+      "imgUrl": "/imgs/computer.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Banana",
+      "price": 1.05,
+      "minusVAT":0.88,
+      "vat":0.17,
+      "stockUnit":100,
+      "imgUrl": "/imgs/banana.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Car",
+      "price": 14000,
+      "minusVAT":11760,
+      "vat":2240,
+      "stockUnit":100,
+      "imgUrl": "/imgs/car.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Car2",
+        "price": 14000,
+        "minusVAT":11760,
+        "vat":2240,
+        "stockUnit":100,
+        "imgUrl": "/imgs/car.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Car3",
+        "price": 14000,
+        "minusVAT":11760,
+        "vat":2240,
+        "stockUnit":100,
+        "imgUrl": "/imgs/car.jpg"
+      },
+      {
+        "id": 7,
+        "name": "Car4",
+        "price": 14000,
+        "minusVAT":11760,
+        "vat":2240,
+        "stockUnit":100,
+        "imgUrl": "/imgs/car.jpg"
+      }
+  ]

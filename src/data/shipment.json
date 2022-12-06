@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "name": "Nairobi Region",
+      "price": 10.99,
+      "pickPoints":[{"id":1,"name":"aaaa"}, {"id":2,"name":"bbbbb"}]
+    },
+    {
+        "id": 2,
+        "name": "Nairobi Boander Counties",
+        "price": 10.99,
+        "pickPoints":[{"id":1,"name":"aaaa"}, {"id":2,"name":"bbbbb"}]
+      },
+      {
+        "id": 3,
+        "name": "Others",
+        "price": 10.99,
+        "pickPoints":[{"id":1,"name":"aaaa"}, {"id":2,"name":"bbbbb"}]
+      }
+  ]
