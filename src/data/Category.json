@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Tiles",
+      "price": 100,
+      "minusVAT":9.23,
+      "vat":1.76,
+      "stockUnit":100,
+      "imgUrl": "/imgs/book.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Laminates",
+      "price": 200,
+      "minusVAT":1007.16,
+      "vat":191.84,
+      "stockUnit":100,
+      "imgUrl": "/imgs/computer.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Solar",
+      "price": 800,
+      "minusVAT":0.88,
+      "vat":0.17,
+      "stockUnit":100,
+      "imgUrl": "/imgs/banana.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Electricals",
+      "price": 140,
+      "minusVAT":11760,
+      "vat":2240,
+      "stockUnit":100,
+      "imgUrl": "/imgs/car.jpg"
+    }
+  ]

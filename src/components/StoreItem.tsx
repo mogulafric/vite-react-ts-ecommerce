@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap"
+import { Button, Card, Col, ListGroup, Row, Form } from "react-bootstrap"
 import { appContext } from "../context/AppContext"
 import { formatCurrency } from "../utilities/formatCurrency"
 import { Link } from 'react-router-dom'
@@ -31,12 +31,55 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
             </Link>
             <Card.Body className="d-flex flex-column">
                 <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                    <span className="fs-2">{name}</span>
-                    <span className="ms-2 text-muted">{formatCurrency(price)}</span>
+                    <span className="fs-6">{name}</span>
+                    <span style={{fontSize:"10px"}}>{`${quantity} in cart`}</span> 
                 </Card.Title>
                 <div className="mt-auto">
+                <ListGroup.Item>
+                    <Row>
+                      <Col>Price:</Col>
+                      <Col>
+                        <strong>{formatCurrency(price)}</strong>
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+
+                <ListGroup.Item>
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>
+                        {id > 0 ? 'In Stock' : 'Out Of Stock'}
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Options:</Col>
+                      <Col>
+                        {id > 0 ? '4' : 'Out Of Stock'}
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>Variations</Col>
+                      <Col>
+                        {id > 0 ? '3' : 'Out Of Stock'}
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                    <>
+                        {/* <ListGroup.Item>
+                            <Row>
+                                <Col>Stock Unit</Col>
+                                <Col>
+                                    {id}
+                                </Col>
+                            </Row>
+                        </ListGroup.Item> */}
+                    </>
                     {quantity === 0 ? (
-                        <Button className="w-100" onClick={() => increaseCartQuantity(id)}>
+                        <Button variant="none" className="w-100" onClick={() => increaseCartQuantity(id)}>
                             + Add To Cart
                         </Button>
                     ) : (
@@ -48,11 +91,9 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                                 className="d-flex align-items-center justify-content-center"
                                 style={{ gap: ".5rem" }}
                             >
-                                <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-                                <div>
-                                    <span className="fs-3">{quantity}</span> in cart
-                                </div>
-                                <Button onClick={() => increaseCartQuantity(id)}>+</Button>
+                                <Button variant="none" onClick={() => decreaseCartQuantity(id)}>-</Button>
+                                <span style={{fontSize:"10px"}}>{`${quantity} in cart`}</span> 
+                                <Button variant="none" onClick={() => increaseCartQuantity(id)}>+</Button>
                             </div>
                             <Button
                                 onClick={() => removeFromCart(id)}

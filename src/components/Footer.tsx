@@ -15,7 +15,7 @@ export function Footer(){
         <hr/>
         <Container>
         <Row className="">
-        <Col xs lg="3">
+        <Col xs={12} lg="3">
         <h4>Would you like to</h4>
         <ul>
             <li>Help center</li>
@@ -30,7 +30,7 @@ export function Footer(){
             <li>Report producr</li>
         </ul>
         </Col>
-        <Col xs lg="6" style={{textAlign:"center"}}>
+        <Col xs={12} lg="6" style={{textAlign:"center"}}>
             <h4>Follow us on</h4>
             <FB /> <TW/> <IG /> <YT/> <WhtsAp/>
             <br></br> <br></br>
@@ -48,7 +48,7 @@ export function Footer(){
             <h4>Accepted Payment methods</h4>
             <Mpesa /><MasterCard /> <Visa /><Paypal />
             </Col>
-        <Col xs lg="3">     
+        <Col xs={12} lg={3}>     
         <ul>
             <li>Your Orders</li>
             <li>Gift Card & Registry</li>
@@ -65,7 +65,7 @@ export function Footer(){
         </Container>
         <Row style={{textAlign:"center"}}>
             <p><a href="www.eliphicegroup.con">www.elephicegroup.com</a>: All Rights Reserved - &copy; 2022  </p>
-            <p>email: info@eliphicegroup.com</p>
+            <p>email: info@elephicegroup.com</p>
         </Row>
         </div>
     )

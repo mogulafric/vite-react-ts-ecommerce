@@ -7,9 +7,11 @@ import { appContext } from "../context/AppContext"
 
 export function Navbar() {
   const { openMainMenu, cartQuantity, openSearchBar , openCart} = appContext()
+  const searchText = "Search a product ..."
+  
   return (
     <>
-      <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
+      <NavbarBs sticky="top" className="bg-gray  mb-3" style={{background:"#f8f9fa", marginBottom: "0 rem!important"}}>
         <Container>
           <Nav className="me-auto">
           <Nav.Link to="/store" as={NavLink}>
@@ -21,31 +23,44 @@ export function Navbar() {
         >
             <MenuIcon />
             </Button>
+           
+            </Nav.Link>
+            <Nav.Link>
+            <Button className="d-block d-sm-none rounded-circle"
+             onClick = {openSearchBar} 
+             style={{ width: "3rem", height: "3rem", position: "relative" }}
+             variant="outline-primary"
+             
+            >
+              <Search />
+            </Button>
             </Nav.Link>
             <Nav.Link to="/store" as={NavLink}>
-              <Logo />
+             
             </Nav.Link>
             <Nav.Link >
-            <Button
-        onClick={openSearchBar}
-        style={{ width: "3rem", height: "3rem", position: "relative" }}
-        variant="outline-primary"
-        className="rounded-circle"
-        ><Search />
-          </Button>
-            
             </Nav.Link>
           </Nav>
+          <InputGroup className="mb-3 d-none d-sm-block w-100"
+            
+
+             style={{ position: "relative"   }}
+            >
+              <Form.Control
+                placeholder={ searchText}
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                style={{ background:"#f8f9fa", height:"3rem", width:"90%", position:"relative" ,marginTop: "15px"}}
+              />
+            </InputGroup>
           <Button
             style={{ width: "3rem", height: "3rem", position: "relative" }}
             variant="outline-primary"
             className="rounded-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 500 500"
-              fill="currentColor">
-              <path d="M255.988 32C160.473 32 78.934 91.804 46.727 176h34.639c9.396-20.484 22.457-39.35 38.868-55.762C156.497 83.973 204.709 64 255.988 64c51.286 0 99.504 19.973 135.771 56.239C428.027 156.505 448 204.719 448 256c0 51.285-19.973 99.501-56.239 135.765C355.494 428.029 307.275 448 255.988 448c-51.281 0-99.493-19.971-135.755-56.234-16.412-16.412-29.473-35.28-38.871-55.766H46.725c32.206 84.201 113.746 144 209.264 144C379.703 480 480 379.715 480 256c0-123.702-100.297-224-224.012-224z" /><path d="M206.863 323.883l22.627 22.627L320 256l-90.51-90.51-22.628 22.628L258.745 240H32v32h226.745z" />
-            </svg>
+            <svg width="30px" height="30px" viewBox="0 0 40 30" id="_03_-_Account" data-name="03 - Account" xmlns="http://www.w3.org/2000/svg">
+  <path id="Path_217" data-name="Path 217" d="M16,1a8,8,0,1,0,8,8A8,8,0,0,0,16,1Zm0,2a6,6,0,1,1-6,6A6,6,0,0,1,16,3Z" transform="translate(-1 -1)" fill-rule="evenodd"/>
+  <path id="Path_218" data-name="Path 218" d="M16,19.2c-5.657,0-10.558,1.175-13,2.82A3.865,3.865,0,0,0,1,25.1a3.865,3.865,0,0,0,2,3.08C5.442,29.825,10.343,31,16,31s10.558-1.175,13-2.82a3.865,3.865,0,0,0,2-3.08,3.865,3.865,0,0,0-2-3.08C26.558,20.375,21.657,19.2,16,19.2Zm0,2a26.973,26.973,0,0,1,10.867,1.909,5.8,5.8,0,0,1,1.694,1.132,1.06,1.06,0,0,1,0,1.718,5.8,5.8,0,0,1-1.694,1.132A26.973,26.973,0,0,1,16,29,26.973,26.973,0,0,1,5.133,27.091a5.8,5.8,0,0,1-1.694-1.132,1.06,1.06,0,0,1,0-1.718,5.8,5.8,0,0,1,1.694-1.132A26.973,26.973,0,0,1,16,21.2Z" transform="translate(-1 -1)" fill-rule="evenodd"/>
+</svg>
           </Button> &nbsp;
           {cartQuantity > 0 && (
             <Button

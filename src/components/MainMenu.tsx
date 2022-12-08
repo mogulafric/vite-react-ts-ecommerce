@@ -12,31 +12,30 @@ let shipping: string = `$0.00`
 let vat:number = 0.16
 
 export function MainMenu({ isOpenMainMenu }: ShoppingCartProps) {
-  const { closeMainMenu, cartItems } = appContext()
+const {closeMainMenu } = appContext()
   return (
     <Offcanvas show={isOpenMainMenu} onHide={closeMainMenu} placement="start">
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Main Logo </Offcanvas.Title>
+        <Offcanvas.Title>
+        <span style={{ 
+              color:"#7c795d",
+              fontFamily:"Trocchi serif",
+              fontSize: "30px",
+               fontWeight: "normal",
+                lineHeight: "48px",
+                margin: 0 }}>Elephice Group</span>
+        </Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
         <Stack gap={3}>
             {`Categories`}
-          {cartItems.map(item => (
-            <Categories key={item.id} {...item} />
-            
-          ))}
+         <Categories id={0} quantity={0} />
            <hr />
           {`Gifts`}
-          {cartItems.map(item => (
-            <Categories key={item.id} {...item} />
-            
-          ))}
+         
           <hr />
           {`New Arrivals`}
-          {cartItems.map(item => (
-            <Categories key={item.id} {...item} />
-            
-          ))}
+          
           <Row  style={{textAlign:"center"}}>
             
             <InputGroup className="mb-3">

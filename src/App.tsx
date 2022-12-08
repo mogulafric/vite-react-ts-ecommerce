@@ -8,6 +8,7 @@ import { Navbar } from "./components/NavBar"
 import { ContextProvider } from "./context/AppContext"
 import { Item } from "./pages/Item"
 import { Footer } from "./components/Footer"
+import { Payment } from "./pages/Payment"
 
 function App() {
   return (
@@ -15,11 +16,13 @@ function App() {
       <Navbar />
       <Container className="mb-4">
         <Routes>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
+          <Route path="/payment" element={<Payment/>}></Route>
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/item/:id" element={<Item />} />
+          
         </Routes>
       </Container>
       <Footer />

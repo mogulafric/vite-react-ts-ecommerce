@@ -1,7 +1,7 @@
 import { Button, Stack } from "react-bootstrap"
+import {Link } from "react-router-dom"
 import { appContext } from "../context/AppContext"
-import storeItems from "../data/items.json"
-import { formatCurrency } from "../utilities/formatCurrency"
+import Category from "../data/Category.json"
 
 type CartItemProps = {
   id: number
@@ -9,31 +9,29 @@ type CartItemProps = {
 }
 
 export function Categories({ id, quantity }: CartItemProps) {
+  
     const {
-        increaseCartQuantity,
-        decreaseCartQuantity,
         removeFromCart,
     } = appContext()
-  const item = storeItems.find(i => i.id === id)
+  const item = Category.length
   if (item == null) return null
 
   return (
+    <>
+    {Category.map((item)=>(
+      <>
+      <Link to={"/"}>
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
+      
+        <>
       <img
         src={item.imgUrl}
         style={{ width: "30px", height: "30px", objectFit: "cover" }}
       />
       <div className="me-auto">
-        <div>
-          {`Cat name`}{" "}
-          {quantity > 1 && (
-            <span className="text-muted" style={{ fontSize: ".65rem" }}>
-              +{`2000`}
-            </span>
-          )}
-        </div>
+       
         <div className="text-muted" style={{ fontSize: ".75rem" }}>
-        {`Over 2000 products`}
+        {`${item.name} (- over ${item.price} pdts)`}
           
         </div>
       </div>
@@ -47,6 +45,13 @@ export function Categories({ id, quantity }: CartItemProps) {
       >
         &gt;
       </Button>
+      
+     </>
+      
     </Stack>
+    </Link>
+    </>
+    ))}
+    </>
   )
-}
+}   

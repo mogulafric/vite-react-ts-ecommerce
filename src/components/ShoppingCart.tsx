@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom'
 type ShoppingCartProps = {
   isOpen: boolean
 }
-let subTotal: number = 0.84
-let shipping: string = `$0.00`
-let vat:number = 0.16
+
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems } = appContext()
@@ -34,7 +32,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
             )} 
           </div>
           <div className="ms-auto text-right">
-            Shipping {shipping} <br></br>
+            Shipping  <br></br>
           </div>
           <div className="ms-auto text-right">
             VAT {""}
