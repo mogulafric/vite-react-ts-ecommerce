@@ -9,6 +9,10 @@ import { ContextProvider } from "./context/AppContext"
 import { Item } from "./pages/Item"
 import { Footer } from "./components/Footer"
 import { Payment } from "./pages/Payment"
+import { Cart } from "./pages/Cart"
+import { Login } from "./pages/Login"
+import { Register} from "./pages/Register"
+import { Orders } from "./pages/Orders"
 
 function App() {
   return (
@@ -22,7 +26,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/item/:id" element={<Item />} />
-          
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path="/orders" element={<Orders/>}/>
         </Routes>
       </Container>
       <Footer />

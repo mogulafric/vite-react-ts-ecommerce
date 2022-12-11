@@ -1,23 +1,16 @@
-import { Offcanvas, Stack, Button } from "react-bootstrap"
+import { Row, Col, Stack, Button } from "react-bootstrap"
 import { appContext } from "../context/AppContext"
 import { formatCurrency } from "../utilities/formatCurrency"
-import { CartItem } from "./CartItem"
+import { CartItem } from "../components/CartItem"
 import storeItems from "../data/items.json"
 import { Link } from 'react-router-dom'
 
-type ShoppingCartProps = {
-  isOpen: boolean
-}
-
-
-export function ShoppingCart({ isOpen }: ShoppingCartProps) {
+export function Cart() {
   const { closeCart, cartItems } = appContext()
   return (
-    <Offcanvas show={isOpen} onHide={closeCart} placement="end">
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
+        <Row>
+        <Col xs={12} lg={9}>
+        <h4>Your shopping cart</h4>
         <Stack gap={3}>
           {cartItems.map(item => (
             <CartItem key={item.id} {...item} />
@@ -55,7 +48,11 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
           </div>
           <Button onClick={closeCart}><Link to="/shipping" style={{color:'white'}}>Checkout</Link></Button>
         </Stack>
-      </Offcanvas.Body>
-    </Offcanvas>
+        </Col>
+        <Col xs={12} lg={3}>
+            <h4>New Arrivals</h4>
+        </Col>
+        </Row>
+     
   )
 }

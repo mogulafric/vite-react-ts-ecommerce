@@ -27,9 +27,20 @@ const {closeMainMenu } = appContext()
         </Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
+      <InputGroup className="mb-3">
+              <Form.Control
+                placeholder=" Search anything ..."
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+              />
+              <Button variant="outline-primary" id="button-addon2"
+              >
+                Search
+              </Button>
+            </InputGroup>
         <Stack gap={3}>
             {`Categories`}
-         <Categories id={0} quantity={0} />
+         <Categories  />
            <hr />
           {`Gifts`}
          
