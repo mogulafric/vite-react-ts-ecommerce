@@ -13,12 +13,15 @@ import { Cart } from "./pages/Cart"
 import { Login } from "./pages/Login"
 import { Register} from "./pages/Register"
 import { Orders } from "./pages/Orders"
+import { OrderTracking } from "./components/OderTracking"
+import { TopNavBar } from "./components/TopNavBar"
 
 function App() {
   return (
     <ContextProvider>
+      <TopNavBar />
       <Navbar />
-      <Container className="mb-4">
+      <Container fluid className="mb-4 p-0">
         <Routes>
         <Route path="/" element={<Home />} />
           <Route path="/payment" element={<Payment/>}></Route>
@@ -29,7 +32,10 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
-          <Route path="/orders" element={<Orders/>}/>
+          <Route path="/orders" element={<Orders/>} />
+            <Route path="/ordertracking" element={<OrderTracking 
+              OrderReceived={false} OrderCancelled={false} AwaitingInventoryToFulfil={false} ProcessingOrderAtHub={false} InTransitToBuyer={false} OrderCompleted={false} />}/>
+          
         </Routes>
       </Container>
       <Footer />

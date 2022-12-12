@@ -1,5 +1,5 @@
 import { SetStateAction, useState } from "react";
-import { Button, Carousel, Col, InputGroup, Row, Form } from "react-bootstrap"
+import { Button, Carousel, Col, InputGroup, Row, Form, Container } from "react-bootstrap"
 import { Categories } from "../components/Categories";
 import { StoreItem } from "../components/StoreItem"
 import storeItems from "../data/items.json"
@@ -16,17 +16,7 @@ export function Store() {
   };
   return (
     <>
-      <Row>
-        <span style={{
-          color: "#7c795d",
-          fontFamily: "Trocchi serif",
-          fontSize: "35px",
-          fontWeight: "normal",
-          lineHeight: "48px",
-          margin: 0
-        }}>Elephice Group
-        </span>
-      </Row>
+     
       <Row>
         
         
@@ -35,7 +25,7 @@ export function Store() {
              
             <Carousel.Item>
                <Link to={item.name}>
-             <img style={{height:"200px", width:"1500px", objectFit: "cover"}} src={item.imgUrl} />
+             <img style={{height:"350px", width:"1500px", objectFit: "cover"}} src={item.imgUrl} />
              <Carousel.Caption>
           <h3>{item.name}</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -47,6 +37,7 @@ export function Store() {
           </Carousel>
         
       </Row>
+      <Container>
       <Row>
         <Col >Catogories </Col></Row>
       <Row md={2} xs={1} lg={4} className="g-3">
@@ -97,6 +88,7 @@ export function Store() {
           </Col>
         ))}
       </Row>
+      </Container>
     </>
   )
 }

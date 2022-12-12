@@ -58,7 +58,7 @@ export function OdersDetails({
 
                                 </div>
                             </div>
-                           
+                           <Link to={"/ordertracking"}>
                             <Button
                                 variant="outline-danger"
                                 size="sm"
@@ -66,6 +66,7 @@ export function OdersDetails({
                             >
                              Track
                             </Button>
+                            </Link>
                         </>
 
                     </Stack>

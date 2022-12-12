@@ -1,0 +1,22 @@
+[
+    {
+        "categoryName": "Floor",
+        "categoryId": "1",
+        "categoryImgUrl":""
+    },
+    {
+        "categoryName": "Wall",
+        "categoryId": "1",
+        "categoryImgUrl":""
+    },
+    {
+        "categoryName": "",
+        "categoryId": "1",
+        "categoryImgUrl":""
+    }
+    {
+        "categoryName": "Mosaic & Decor",
+        "categoryId": "1",
+        "categoryImgUrl":""
+    }
+]
